@@ -1,22 +1,32 @@
 [colors]
-bg = #222                                                   ; Background
-bg-alt = #444                                               ; Background alternative
-fg = #fff                                                   ; Foreground (e.g. text)
-fg-alt = #555                                               ; Foreground alternative
-underline-blue = #198fe3                                    ; Blue for underlines
-underline-turquiose = #20e3b2                               ; Turquiose for underlines
-underline-green = #0ad14d                                   ; Green for underlines
-primary = #11ec36                                           ; Primary color
-secondary = #e60053                                         ; Secondary color
-warn = #e22313                                              ; Warning Color
+; Background
+bg = #222
+; Background alternative
+bg-alt = #444
+; Foreground (e.g. text)
+fg = #fff
+; Foreground alternative
+fg-alt = #555
+; Blue for underlines
+underline-blue = #198fe3
+; Turquiose for underlines
+underline-turquiose = #20e3b2
+; Green for underlines
+underline-green = #0ad14d
+; Primary color
+primary = #11ec36
+; Secondary color
+secondary = #e60053
+; Warning Color
+warn = #e22313
 
 [bar/bar]
-width = 100%                                                ; Bar width
-height = 30                                                 ; Bar height
-radius = 6.0                                                ; Round edges
+width = 100%                 ; Bar width
+height = 30                  ; Bar height
+radius = 6.0                 ; Round edges
 fixed-center = false
-background = ${colors.bg}                                   ; Bar background color
-foreground = ${colors.fg}                                   ; Bar foreground color
+background = ${colors.bg}    ; Bar background color
+foreground = ${colors.fg}    ; Bar foreground color
 
 line-size = 3
 line-color = #f00
@@ -30,10 +40,13 @@ padding-right = 2
 module-margin-left = 1
 module-margin-right = 2
 
-font-0 = "Roboto Mono:size=12:weight:semibold;2"            ; Font
+; Font
+font-0 = "Roboto Mono:size=12:weight:semibold;2"
 
-modules-left = i3                                           ; Modules left
-modules-right = pulseaudio temperature date                 ; Modules right
+; Modules left
+modules-left = i3
+; Modules right
+modules-right = pulseaudio temperature date
 
 tray-position = right
 tray-padding = 2
@@ -48,20 +61,24 @@ index-sort = true
 wrapping-scroll = false
 label-mode-padding = 2
 
-label-focused = %index%                                     ; Focused workspace
+; Focused workspace
+label-focused = %index%
 label-focused-background = ${colors.bg-alt}
 label-focused-underline= ${colors.underline-turquiose}
 label-focused-padding = 2
 
-label-unfocused = %index%                                   ; Unfocused workspace
+; Unfocused workspace
+label-unfocused = %index%
 label-unfocused-padding = 2
 
-label-visible = %index%                                     ; Active workspace on different monitor
+; Active workspace on different monitor
+label-visible = %index%
 label-visible-background = ${self.label-focused-background}
 label-visible-underline = ${self.label-focused-underline}
 label-visible-padding = ${self.label-focused-padding}
 
-label-urgent = %index%                                      ; Urgent workspace
+; Urgent workspace
+label-urgent = %index%
 label-urgent-background = ${colors.warn}
 label-urgent-padding = 2
 
