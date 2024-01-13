@@ -40,7 +40,8 @@ tray-padding = 2
 cursor-click = pointer
 cursor-scroll = ns-resize
 
-[module/i3]                                                 ; i3 module (shows workspaces)
+; i3 module (shows workspaces)
+[module/i3]
 type = internal/i3
 format = <label-state> <label-mode>
 index-sort = true
@@ -64,21 +65,24 @@ label-urgent = %index%                                      ; Urgent workspace
 label-urgent-background = ${colors.warn}
 label-urgent-padding = 2
 
-[module/date]                                               ; Time module
+; Time module
+[module/date]
 type = internal/date
 interval = 5
 time = %H:%M
 format-underline = ${colors.underline-blue}
 label = %time%
 
-[module/pulseaudio]                                         ; Volume level
+; Volume level
+[module/pulseaudio]
 type = internal/pulseaudio
 format-volume = <label-volume>
 label-volume = %percentage%%
 label-muted = 0%
 format-underline = ${colors.underline-green}
 
-[module/temperature]                                        ; CPU temperature in °C
+; CPU temperature in °C
+[module/temperature]
 type = internal/temperature
 thermal-zone = 0
 format = <label>
