@@ -1,0 +1,59 @@
+configuration {
+    display-drun: "Applications:";                          // Application window prompt
+    display-window: "Windows:";                             // Window switcher prompt
+    drun-display-format: "{icon} {name}";                   // Display icon before name
+    show-icons: true;                                       // Show icons
+    modi: "window,drun,run";                                // Active modules
+    font: "Roboto Mono 12";                                 // Font
+}
+
+* {
+    bg: #151c26;                                            // Background
+    bg-alt: #152c36;                                        // Background alternative
+    fg: #ffffff;                                            // Foreground (e.g. Text)
+    
+    border: 5;                                              // Round edges
+    padding: 3;                                             // Padding
+    margin: 0;
+    background-color: @bg;                                  // Setting background
+}
+
+#window {                   1                               // Main rofi Window
+    border-color: @bg-alt;
+    border: 3;
+    text-color: @fg;
+    width: 30%;
+}
+
+#element {                                                  // Elements (e.g. Applications)
+    text-color: @fg; 
+    padding: 10;
+}
+
+#element-text {                                             // Element text
+    vertical-align: 0.5;                                    // Center text vertically
+    text-color: @fg;
+    background-color: transparent;
+}
+
+#element-icon {
+    size: 1.5em;                                            // Icon size
+}
+
+#element selected{                                          // Current element
+    text-color: @fg;
+    padding: 2.5;
+    vertical-align: 0.5;
+    children: [icon, name];
+    background-color: @bg-alt;                              // Highlight current element
+}
+#inputbar {                                                 // Input
+    children: [prompt, entry];
+}
+#prompt, entry {
+    text-color: @fg;
+}
+#listview {                                                 // List settings
+    lines: 3;
+    columns: 1;
+}

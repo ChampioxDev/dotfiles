@@ -1,0 +1,86 @@
+[colors]
+bg = #222                                                   ; Background
+bg-alt = #444                                               ; Background alternative
+fg = #fff                                                   ; Foreground (e.g. text)
+fg-alt = #555                                               ; Foreground alternative
+underline-blue = #198fe3                                    ; Blue for underlines
+underline-turquiose = #20e3b2                               ; Turquiose for underlines
+underline-green = #0ad14d                                   ; Green for underlines
+primary = #11ec36                                           ; Primary color
+secondary = #e60053                                         ; Secondary color
+warn = #e22313                                              ; Warning Color
+
+[bar/bar]
+width = 100%                                                ; Bar width
+height = 30                                                 ; Bar height
+radius = 6.0                                                ; Round edges
+fixed-center = false
+background = ${colors.bg}                                   ; Bar background color
+foreground = ${colors.fg}                                   ; Bar foreground color
+
+line-size = 3
+line-color = #f00
+
+border-size = 4
+border-color = #00000000
+
+padding-left = 0
+padding-right = 2
+
+module-margin-left = 1
+module-margin-right = 2
+
+font-0 = "Roboto Mono:size=12:weight:semibold;2"            ; Font
+
+modules-left = i3                                           ; Modules left
+modules-right = pulseaudio temperature date                 ; Modules right
+
+tray-position = right
+tray-padding = 2
+cursor-click = pointer
+cursor-scroll = ns-resize
+
+[module/i3]                                                 ; i3 module (shows workspaces)
+type = internal/i3
+format = <label-state> <label-mode>
+index-sort = true
+wrapping-scroll = false
+label-mode-padding = 2
+
+label-focused = %index%                                     ; Focused workspace
+label-focused-background = ${colors.bg-alt}
+label-focused-underline= ${colors.underline-turquiose}
+label-focused-padding = 2
+
+label-unfocused = %index%                                   ; Unfocused workspace
+label-unfocused-padding = 2
+
+label-visible = %index%                                     ; Active workspace on different monitor
+label-visible-background = ${self.label-focused-background}
+label-visible-underline = ${self.label-focused-underline}
+label-visible-padding = ${self.label-focused-padding}
+
+label-urgent = %index%                                      ; Urgent workspace
+label-urgent-background = ${colors.warn}
+label-urgent-padding = 2
+
+[module/date]                                               ; Time module
+type = internal/date
+interval = 5
+time = %H:%M
+format-underline = ${colors.underline-blue}
+label = %time%
+
+[module/pulseaudio]                                         ; Volume level
+type = internal/pulseaudio
+format-volume = <label-volume>
+label-volume = %percentage%%
+label-muted = 0%
+format-underline = ${colors.underline-green}
+
+[module/temperature]                                        ; CPU temperature in °C
+type = internal/temperature
+thermal-zone = 0
+format = <label>
+format-underline = ${colors.underline-turquiose}
+label = %temperature-c%
